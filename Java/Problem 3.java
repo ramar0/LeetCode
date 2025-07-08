@@ -1,36 +1,19 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        ArrayList<String> res = new ArrayList();
-        StringBuffer buff = new StringBuffer();
         HashMap charCount = new HashMap();
+        int slide = 0, res = 0;
 
         s = s.toLowercase();
 
         for (char c : s.toCharArray()){
-            if(charCount.containsKey(c)){
-                for (int i = 0 :i,buff.length(); i++){
-                    char currentChar = buff.charAt(i);
-                    buff.deleteCharAt(i);
-                    if (currentChar == c) {
-                        break;
-                    }
-                }
-            } else {
-                charCount.put((Object)c, 1);
-                buff.append(c);
-                if (res.isEmpty()) {
-                    res.add(buff.toString());
-                    continue;
-                }
+            if(charCount.containsKey(c) && (Integer)charCount.get(c) >= beg){
+                slide = (Integer)charCount.get(c) + 1;
             }
-            if (buff.toString().length() < res.get(0).length()) {
-                continue;
-            }
-            if (buff.length() > res.get(0).length()) {
-                res.clear;
-            }
-            res.add(buff.toString());
+            int end = s.indexOf(c, slide);
+            charCount.put((Object)c, end);
+            int currentWindow = end-slide+1; 
+            res = currentWindow > res ? currentWindow : res;
         }
-        return res.get(0).length();
+        return res;
     }
 }
