@@ -9,9 +9,9 @@ class Solution {
             if(charCount.containsKey(c) && (Integer)charCount.get(c) >= beg){
                 slide = (Integer)charCount.get(c) + 1;
             }
-            int end = s.indexOf(c, slide);
-            charCount.put((Object)c, end);
-            int currentWindow = end-slide+1; 
+            int endSlide = s.indexOf(c, slide);
+            charCount.put((Object)c, endSlide);
+            int currentWindow = endSlide-slide+1; 
             res = currentWindow > res ? currentWindow : res;
         }
         return res;
