@@ -9,3 +9,5 @@ class Solution(object):
                 slide = charMap[c] + 1
             charMap[char] = end
             res = max(res, end-slide+1)
+        
+        return res
