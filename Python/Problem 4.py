@@ -4,7 +4,7 @@ class Solution(object):
         i_p = 0
         res = false
 
-        for i in range(0, len(s)):
+        while i_s < len(s) and i_p < len(p):
             if 0 == len(p):
                 return 0 == len(s)
 
