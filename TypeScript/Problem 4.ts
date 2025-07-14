@@ -18,13 +18,11 @@ function isMatch(s: string, p: string): boolean {
         if (i_p+1 < p.length() && p.charAt(i_p+1) == '*'){
             if (i_s+1 < s.length() && s.charAt(i_s+1) != p.charAt(i_p)){
                 i_p += 2;
-            }else{
-                i_s++;
             }
         }else{
             i_p++;
-            i_s++;
         }
+        i_s++;
     }
     return i_s == s.length();
 };
