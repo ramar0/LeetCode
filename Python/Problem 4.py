@@ -16,9 +16,7 @@ class Solution(object):
             if i_p+1 < len(p) and p[i_p+1] == '*':
                 if i_s+1 < len(s) and s[i_s+1] != p[i_p]:
                     i_p += 2
-                else:
-                    i_s++
             else:
                 i_p++
-                i_s++
+            i_s++
         return i_s == len(s)
