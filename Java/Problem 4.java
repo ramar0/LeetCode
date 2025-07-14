@@ -8,12 +8,12 @@ class Solution {
         int i_p = 0;
         Boolean res = false;
 
-        while (i_s < s.length() && i_p < p.length()){
+        while (i_p < p.length()){
         
             res = (i_s < length(s) && (p.charAt(i_p) == s.charAt(i_s) or p.charAt(i_p) == '.'));
 
             if (!res){
-                break;
+                return res;
             }
 
             if (i_p+1 < p.length() && p.charAt(i_p+1) == '*'){
@@ -27,6 +27,6 @@ class Solution {
                 i_s++;
             }
         }
-        return res;
+        return i_s == s.length();
     }
 }
