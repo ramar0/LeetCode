@@ -1,15 +1,15 @@
 impl Solution {
     pub fn maximum_number_of_string_pairs(words: Vec<String>) -> i32 {
-        let mut wordMap = HashMap::New();
+        let mut wordMap = HashMap::new();
         let mut res = 0;
 
         for word in words {
             let rev = word.chars().rev().collect();
 
-            if let Some(exist) = map.get_mut(&rev) {
+            if let Some(exist) = wordMap.get_mut(&rev) {
                 *exist-=1;
                 if *exist == 0 {
-                    map.remove(&exist);
+                    wordMap.remove(&exist);
                 }
                 res+=1;
             }else{
