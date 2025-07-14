@@ -4,7 +4,7 @@ impl Solution {
         let res = 0;
 
         for i in nums{
-            count.entry(i).or_insert(0) += 1;
+            countMap.entry(i).or_insert(0) += 1;
         }
 
         let count = countMap.values().cloned().collect();
