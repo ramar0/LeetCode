@@ -19,6 +19,7 @@ class Solution {
             if (i_p+1 < p.length() && p.charAt(i_p+1) == '*'){
                 if (i_s+1 < s.length() && s.charAt(i_s+1) != p.charAt(i_p)){
                     i_p += 2;
+                    i_s ++;
                 }else{
                     i_s++;
                 }
